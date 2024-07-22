@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fun Learning Adventure</title>
+    <meta name="description" content="Fun Learning Adventure - Interactive educational tools for students.">
+    <meta name="keywords" content="education, learning, tools, interactive, students">
+    <meta name="author" content="Your Name">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.3.0/alpine.js" integrity="sha512-nIwdJlD5/vHj23CbO2iHCXtsqzdTTx3e3uAmpTm4x2Y8xCIFyWu4cSIV8GaGe2UNVq86/1h9EgUZy7tn243qdA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .float { animation: float 3s ease-in-out infinite; }
+    </style>
+</head>
+<body class="bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 min-h-screen" x-data="appData()">
+    <header class="bg-yellow-400 text-purple-800 p-6 rounded-b-3xl shadow-lg">
+        <h1 class="text-4xl font-bold text-center">Fun Learning Adventure</h1>
+    </header>
+
+    <main class="container mx-auto p-4" x-show="!showTools">
+        <section class="mb-8 text-center">
+            <h2 class="text-3xl font-bold mb-4 text-white">Pick Your Grade!</h2>
+            <div class="flex flex-wrap justify-center gap-4 mb-4">
+                <template x-for="grade in grades" :key="grade">
+                    <button 
+                        @click="selectGrade(grade)"
+                        :class="{'bg-yellow-300 text-purple-800': activeGrade === grade, 'bg-blue-300 text-blue-800': activeGrade !== grade}"
+                        class="px-6 py-3 rounded-full text-xl font-bold transform transition hover:scale-110"
+                        x-text="'Grade ' + grade"
+                        aria-label="'Select Grade ' + grade"
+                    ></button>
+                </template>
+            </div>
+            <p class="text-2xl text-white">You're in Grade <span x-text="activeGrade" class="font-bold text-yellow-300"></span>!</p>
+        </section>
+
+        <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <template x-for="subject in subjects" :key="subject">
+                <div 
+                    @click="toggleSubject(subject)"
+                    :class="{'transform scale-105': activeSubject === subject}"
+                    class="bg-white p-6 rounded-2xl shadow-lg cursor-pointer transition-all duration-300 hover:shadow-xl float"
+                    aria-label="'Select Subject ' + subject"
+                >
+                    <h3 class="text-2xl font-bold mb-2 text-purple-600" x-text="subject"></h3>
+                    <p class="text-gray-600 mb-4" x-text="getSubjectDescription(subject)"></p>
+                    <button class="bg-green-400 text-white px-4 py-2 rounded-full hover:bg-green-500 transition">Explore</button>
+                    <button class="bg-blue-400 text-white px-4 py-2 rounded-full hover:bg-blue-500 transition mt-2" @click="showTools = true">Explore More Tools</button>
+                    
+                    <div x-show="activeSubject === subject" class="mt-4 p-4 bg-yellow-100 rounded-lg">
+                        <h4 class="font-bold text-lg mb-2" x-text="'Fun ' + subject + ' Activity for Grade ' + activeGrade + ':'"></h4>
+                        <div x-html="getSubjectActivity(subject, activeGrade)"></div>
+                    </div>
+                </div>
+            </template>
+        </section>
+    </main>
+
+    <main class="container mx-auto p-4" x-show="showTools">
+        <button class="bg-red-400 text-white px-4 py-2 rounded-full hover:bg-red-500 transition mb-4" @click="showTools = false">Back</button>
+        <section class="mb-8 text-center">
+            <h2 class="text-3xl font-bold mb-4 text-white">All Available Tools</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <template x-for="tool in tools" :key="tool.id">
+                    <div class="bg-white p-6 rounded-2xl shadow-lg cursor-pointer transition-all duration-300 hover:shadow-xl float">
+                        <h3 class="text-2xl font-bold mb-2 text-purple-600" x-text="tool.name"></h3>
+                        <p class="text-gray-600 mb-4" x-text="tool.description"></p>
+                        <a :href="tool.link" class="bg-green-400 text-white px-4 py-2 rounded-full hover:bg-green-500 transition" target="_blank" rel="noopener noreferrer">Explore</a>
+                    </div>
+                </template>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-blue-600 text-white p-4 mt-8 rounded-t-3xl text-center">
+        <p>&copy; 2024 Fun Learning Adventure. Made with ❤️ for curious minds!</p>
+    </footer>
+
+    <script>
+        function appData() {
+            return {
+                activeGrade: 1,
+                activeSubject: null,
+                showTools: false,
+                grades: [1, 2, 3, 4, 5, 6],
+                subjects: ['Math', 'Science', 'English', 'Malay', 'Tamil', 'Others'],
+                tools: [],
+                async fetchTools() {
+                    try {
+                        const response = await fetch('tools.json');
+                        const data = await response.json();
+                        this.tools = data.grades[this.activeGrade][this.activeSubject];
+                    } catch (err) {
+                        console.error('Failed to fetch tools', err);
+                    }
+                },
+                selectGrade(grade) {
+                    this.activeGrade = grade;
+                    this.activeSubject = null;
+                    this.tools = [];
+                },
+                toggleSubject(subject) {
+                    this.activeSubject = subject;
+                    this.fetchTools();
+                },
+                getSubjectDescription(subject) {
+                    const descriptions = {
+                        'Math': 'Solve puzzles and become a number wizard!',
+                        'Science': 'Explore the wonders of our amazing world!',
+                        'English': 'Become a master storyteller and word genius!',
+                        'Malay': 'Travel through time and around the globe!',
+                        'Tamil': 'Let your imagination run wild with colors!',
+                        'Others': 'Create awesome beats and melodies!'
+                    };
+                    return descriptions[subject] || 'Discover amazing things!';
+                },
+                getSubjectActivity(subject, grade) {
+                    const activities = {
+                        'Math': [
+                            'Practice your math skills with these fun games:<br>' +
+                            '<ul class="list-disc list-inside mt-2">' +
+                            '<li><a href="https://vijayseelan.github.io/subtraction-borrowing/" target="_blank" class="text-blue-500 hover:underline">Subtraction with borrowing</a></li>' +
+                            '<li><a href="https://vijayseelan.github.io/addition-subtraction/" target="_blank" class="text-blue-500 hover:underline">Addition and subtraction practice</a></li>' +
+                            '</ul>',
+                            'Create a pattern using shapes and colors.',
+                            'Measure items in your home using different units.',
+                            'Solve word problems involving addition and subtraction.',
+                            'Learn about fractions by dividing food items.',
+                            'Practice long division with real-world examples.'
+                        ],
+                        'Science': [
+                            'Observe and draw the phases of the moon for a week.',
+                            'Create a simple weather station to track temperature.',
+                            'Grow plants from seeds and document their growth.',
+                            'Build a model of the solar system.',
+                            'Conduct experiments about the water cycle.',
+                            'Research and present about different ecosystems.'
+                        ],
+                        'English': [
+                            'Write a story about your favorite toy coming to life.',
+                            'Practice reading aloud with expression.',
+                            'Create a comic strip about your day.',
+                            'Write a letter to your future self.',
+                            'Read a chapter book and write a book report.',
+                            'Write and perform a short play with friends or family.'
+                        ],
+                        'Malay': [
+                            'Draw a map of your neighborhood.',
+                            'Learn about different community helpers.',
+                            'Create a family tree with photos or drawings.',
+                            'Research and present about a different culture.',
+                            'Make a timeline of important historical events.',
+                            'Debate a current event with classmates or family.'
+                        ],
+                        'Tamil': [
+                            'Create a self-portrait using crayons or markers.',
+                            'Make a collage using materials found in nature.',
+                            'Design a new flag for your imaginary country.',
+                            'Paint a picture inspired by your favorite song.',
+                            'Sculpt an animal using clay or playdough.',
+                            'Create a mixed media artwork about your future goals.'
+                        ],
+                        'Others': [
+                            'Make a simple instrument using household items.',
+                            'Learn and sing a new song.',
+                            'Create a rhythm pattern and teach it to a friend.',
+                            'Listen to different genres of music and draw what you hear.',
+                            'Compose a short melody using a xylophone or piano app.',
+                            'Research and present about a famous composer or musician.'
+                        ]
+                    };
+                    return activities[subject][grade - 1] || 'Try a fun experiment related to this subject!';
+                }
+            };
+        }
+
+        document.addEventListener('alpine:init', () => {
+            Alpine.data('appData', appData);
+        });
+    </script>
+</body>
+</html>
