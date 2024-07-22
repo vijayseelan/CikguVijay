@@ -1,0 +1,310 @@
+{
+  "grades": {
+    "1": {
+      "Math": [
+        {
+          "id": 1,
+          "name": "Subtraction with Borrowing",
+          "description": "Practice subtraction with borrowing through interactive exercises.",
+          "link": "https://vijayseelan.github.io/subtraction-borrowing/"
+        },
+        {
+          "id": 2,
+          "name": "Addition Practice",
+          "description": "Improve your addition skills with these fun games.",
+          "link": "https://vijayseelan.github.io/addition-practice/"
+        }
+      ],
+      "Science": [
+        {
+          "id": 3,
+          "name": "Plant Growth",
+          "description": "Learn about plant growth with interactive activities.",
+          "link": "https://vijayseelan.github.io/plant-growth/"
+        }
+      ],
+      "English": [
+        {
+          "id": 4,
+          "name": "Storytelling",
+          "description": "Become a master storyteller with these exercises.",
+          "link": "https://vijayseelan.github.io/storytelling/"
+        }
+      ],
+      "Malay": [
+        {
+          "id": 5,
+          "name": "Malay Vocabulary",
+          "description": "Enhance your Malay vocabulary through engaging activities.",
+          "link": "https://vijayseelan.github.io/malay-vocabulary/"
+        }
+      ],
+      "Tamil": [
+        {
+          "id": 6,
+          "name": "Tamil Letters",
+          "description": "Learn Tamil letters with fun exercises.",
+          "link": "https://vijayseelan.github.io/tamil-letters/"
+        }
+      ],
+      "Others": [
+        {
+          "id": 7,
+          "name": "Art and Craft",
+          "description": "Explore your creativity with art and craft activities.",
+          "link": "https://vijayseelan.github.io/art-craft/"
+        }
+      ]
+    },
+    "2": {
+      "Math": [
+        {
+          "id": 8,
+          "name": "Multiplication Basics",
+          "description": "Learn the basics of multiplication.",
+          "link": "https://vijayseelan.github.io/multiplication-basics/"
+        }
+      ],
+      "Science": [
+        {
+          "id": 9,
+          "name": "Water Cycle",
+          "description": "Understand the water cycle through fun activities.",
+          "link": "https://vijayseelan.github.io/water-cycle/"
+        }
+      ],
+      "English": [
+        {
+          "id": 10,
+          "name": "Grammar Basics",
+          "description": "Improve your grammar skills.",
+          "link": "https://vijayseelan.github.io/grammar-basics/"
+        }
+      ],
+      "Malay": [
+        {
+          "id": 11,
+          "name": "Malay Stories",
+          "description": "Enjoy and learn from Malay stories.",
+          "link": "https://vijayseelan.github.io/malay-stories/"
+        }
+      ],
+      "Tamil": [
+        {
+          "id": 12,
+          "name": "Tamil Poems",
+          "description": "Learn and recite Tamil poems.",
+          "link": "https://vijayseelan.github.io/tamil-poems/"
+        }
+      ],
+      "Others": [
+        {
+          "id": 13,
+          "name": "Music Basics",
+          "description": "Learn the basics of music and rhythm.",
+          "link": "https://vijayseelan.github.io/music-basics/"
+        }
+      ]
+    },
+    "3": {
+      "Math": [
+        {
+          "id": 14,
+          "name": "Division Basics",
+          "description": "Understand the basics of division.",
+          "link": "https://vijayseelan.github.io/division-basics/"
+        }
+      ],
+      "Science": [
+        {
+          "id": 15,
+          "name": "Solar System",
+          "description": "Learn about the solar system.",
+          "link": "https://vijayseelan.github.io/solar-system/"
+        }
+      ],
+      "English": [
+        {
+          "id": 16,
+          "name": "Reading Comprehension",
+          "description": "Improve your reading comprehension skills.",
+          "link": "https://vijayseelan.github.io/reading-comprehension/"
+        }
+      ],
+      "Malay": [
+        {
+          "id": 17,
+          "name": "Malay Culture",
+          "description": "Learn about Malay culture and traditions.",
+          "link": "https://vijayseelan.github.io/malay-culture/"
+        }
+      ],
+      "Tamil": [
+        {
+          "id": 18,
+          "name": "Tamil Proverbs",
+          "description": "Explore and understand Tamil proverbs.",
+          "link": "https://vijayseelan.github.io/tamil-proverbs/"
+        }
+      ],
+      "Others": [
+        {
+          "id": 19,
+          "name": "Drama and Acting",
+          "description": "Engage in drama and acting exercises.",
+          "link": "https://vijayseelan.github.io/drama-acting/"
+        }
+      ]
+    },
+    "4": {
+      "Math": [
+        {
+          "id": 20,
+          "name": "Fractions",
+          "description": "Learn about fractions and their applications.",
+          "link": "https://vijayseelan.github.io/fractions/"
+        }
+      ],
+      "Science": [
+        {
+          "id": 21,
+          "name": "Human Body",
+          "description": "Discover the human body and its functions.",
+          "link": "https://vijayseelan.github.io/human-body/"
+        }
+      ],
+      "English": [
+        {
+          "id": 22,
+          "name": "Creative Writing",
+          "description": "Enhance your creative writing skills.",
+          "link": "https://vijayseelan.github.io/creative-writing/"
+        }
+      ],
+      "Malay": [
+        {
+          "id": 23,
+          "name": "Malay Grammar",
+          "description": "Improve your Malay grammar skills.",
+          "link": "https://vijayseelan.github.io/malay-grammar/"
+        }
+      ],
+      "Tamil": [
+        {
+          "id": 24,
+          "name": "Tamil Stories",
+          "description": "Enjoy and learn from Tamil stories.",
+          "link": "https://vijayseelan.github.io/tamil-stories/"
+        }
+      ],
+      "Others": [
+        {
+          "id": 25,
+          "name": "Art Techniques",
+          "description": "Learn various art techniques.",
+          "link": "https://vijayseelan.github.io/art-techniques/"
+        }
+      ]
+    },
+    "5": {
+      "Math": [
+        {
+          "id": 26,
+          "name": "Decimals",
+          "description": "Understand decimals and their applications.",
+          "link": "https://vijayseelan.github.io/decimals/"
+        }
+      ],
+      "Science": [
+        {
+          "id": 27,
+          "name": "Electricity",
+          "description": "Learn about electricity and circuits.",
+          "link": "https://vijayseelan.github.io/electricity/"
+        }
+      ],
+      "English": [
+        {
+          "id": 28,
+          "name": "Poetry",
+          "description": "Explore different forms of poetry.",
+          "link": "https://vijayseelan.github.io/poetry/"
+        }
+      ],
+      "Malay": [
+        {
+          "id": 29,
+          "name": "Malay Poems",
+          "description": "Learn and recite Malay poems.",
+          "link": "https://vijayseelan.github.io/malay-poems/"
+        }
+      ],
+      "Tamil": [
+        {
+          "id": 30,
+          "name": "Tamil Culture",
+          "description": "Discover Tamil culture and traditions.",
+          "link": "https://vijayseelan.github.io/tamil-culture/"
+        }
+      ],
+      "Others": [
+        {
+          "id": 31,
+          "name": "Dance",
+          "description": "Learn different dance forms.",
+          "link": "https://vijayseelan.github.io/dance/"
+        }
+      ]
+    },
+    "6": {
+      "Math": [
+        {
+          "id": 32,
+          "name": "Algebra Basics",
+          "description": "Get started with the basics of algebra.",
+          "link": "https://vijayseelan.github.io/algebra-basics/"
+        }
+      ],
+      "Science": [
+        {
+          "id": 33,
+          "name": "Ecology",
+          "description": "Understand the principles of ecology.",
+          "link": "https://vijayseelan.github.io/ecology/"
+        }
+      ],
+      "English": [
+        {
+          "id": 34,
+          "name": "Essay Writing",
+          "description": "Improve your essay writing skills.",
+          "link": "https://vijayseelan.github.io/essay-writing/"
+        }
+      ],
+      "Malay": [
+        {
+          "id": 35,
+          "name": "Malay Literature",
+          "description": "Explore Malay literature.",
+          "link": "https://vijayseelan.github.io/malay-literature/"
+        }
+      ],
+      "Tamil": [
+        {
+          "id": 36,
+          "name": "Advanced Tamil",
+          "description": "Advance your Tamil language skills.",
+          "link": "https://vijayseelan.github.io/advanced-tamil/"
+        }
+      ],
+      "Others": [
+        {
+          "id": 37,
+          "name": "Public Speaking",
+          "description": "Enhance your public speaking skills.",
+          "link": "https://vijayseelan.github.io/public-speaking/"
+        }
+      ]
+    }
+  }
+}
