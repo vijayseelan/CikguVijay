@@ -50,13 +50,7 @@
                 >
                     <h3 class="text-2xl font-bold mb-2 text-purple-600" x-text="subject"></h3>
                     <p class="text-gray-600 mb-4" x-text="getSubjectDescription(subject)"></p>
-                    <button class="bg-green-400 text-white px-4 py-2 rounded-full hover:bg-green-500 transition">Explore</button>
                     <button class="bg-blue-400 text-white px-4 py-2 rounded-full hover:bg-blue-500 transition mt-2" @click="showTools = true">Explore More Tools</button>
-                    
-                    <div x-show="activeSubject === subject" class="mt-4 p-4 bg-yellow-100 rounded-lg">
-                        <h4 class="font-bold text-lg mb-2" x-text="'Fun ' + subject + ' Activity for Grade ' + activeGrade + ':'"></h4>
-                        <div x-html="getSubjectActivity(subject, activeGrade)"></div>
-                    </div>
                 </div>
             </template>
         </section>
@@ -119,63 +113,6 @@
                         'Others': 'Create awesome beats and melodies!'
                     };
                     return descriptions[subject] || 'Discover amazing things!';
-                },
-                getSubjectActivity(subject, grade) {
-                    const activities = {
-                        'Math': [
-                            'Practice your math skills with these fun games:<br>' +
-                            '<ul class="list-disc list-inside mt-2">' +
-                            '<li><a href="https://vijayseelan.github.io/subtraction-borrowing/" target="_blank" class="text-blue-500 hover:underline">Subtraction with borrowing</a></li>' +
-                            '<li><a href="https://vijayseelan.github.io/addition-subtraction/" target="_blank" class="text-blue-500 hover:underline">Addition and subtraction practice</a></li>' +
-                            '</ul>',
-                            'Create a pattern using shapes and colors.',
-                            'Measure items in your home using different units.',
-                            'Solve word problems involving addition and subtraction.',
-                            'Learn about fractions by dividing food items.',
-                            'Practice long division with real-world examples.'
-                        ],
-                        'Science': [
-                            'Observe and draw the phases of the moon for a week.',
-                            'Create a simple weather station to track temperature.',
-                            'Grow plants from seeds and document their growth.',
-                            'Build a model of the solar system.',
-                            'Conduct experiments about the water cycle.',
-                            'Research and present about different ecosystems.'
-                        ],
-                        'English': [
-                            'Write a story about your favorite toy coming to life.',
-                            'Practice reading aloud with expression.',
-                            'Create a comic strip about your day.',
-                            'Write a letter to your future self.',
-                            'Read a chapter book and write a book report.',
-                            'Write and perform a short play with friends or family.'
-                        ],
-                        'Malay': [
-                            'Draw a map of your neighborhood.',
-                            'Learn about different community helpers.',
-                            'Create a family tree with photos or drawings.',
-                            'Research and present about a different culture.',
-                            'Make a timeline of important historical events.',
-                            'Debate a current event with classmates or family.'
-                        ],
-                        'Tamil': [
-                            'Create a self-portrait using crayons or markers.',
-                            'Make a collage using materials found in nature.',
-                            'Design a new flag for your imaginary country.',
-                            'Paint a picture inspired by your favorite song.',
-                            'Sculpt an animal using clay or playdough.',
-                            'Create a mixed media artwork about your future goals.'
-                        ],
-                        'Others': [
-                            'Make a simple instrument using household items.',
-                            'Learn and sing a new song.',
-                            'Create a rhythm pattern and teach it to a friend.',
-                            'Listen to different genres of music and draw what you hear.',
-                            'Compose a short melody using a xylophone or piano app.',
-                            'Research and present about a famous composer or musician.'
-                        ]
-                    };
-                    return activities[subject][grade - 1] || 'Try a fun experiment related to this subject!';
                 }
             };
         }
