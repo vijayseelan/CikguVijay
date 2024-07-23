@@ -93,6 +93,24 @@
           "name": "Multiplication Basics",
           "description": "Learn the basics of multiplication.",
           "link": "https://vijayseelan.github.io/multiplication-basics/"
+        }, 
+        {
+          "id": 43,
+          "name": "இடமதிப்பு இலக்கமதிப்பு ஆண்டு 2",
+          "description": "ஒன்று, பத்து, நூறு ஆகிய இடமதிப்பையும் இலக்கமதிப்பையும் அறிவோம்",
+          "link": "https://vijayseelan.github.io/Place-Value-Y2-Tamil/"
+        },
+        {
+          "id": 44,
+          "name": "Nilai Tempat dan Nilai Digit Tahun 2",
+          "description": "Belajar nilai tempat dan nilai digit melalui permainan ini",
+          "link": "https://vijayseelan.github.io/Place-Value-Year-2-Malay/"
+        },
+        {
+          "id": 45,
+          "name": "Place value and digit value year 2",
+          "description": "Explore place value and digit value",
+          "link": "https://vijayseelan.github.io/Place-Value-Year-2-English/"
         }
       ],
       "Science": [
