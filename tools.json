@@ -4,15 +4,27 @@
       "Math": [
         {
           "id": 1,
-          "name": "Subtraction with Borrowing",
-          "description": "Practice subtraction with borrowing through interactive exercises.",
+          "name": "எடுத்துச் சென்று கழித்தல்",
+          "description": "எடுத்துச் சென்று கழித்தல் கணக்குகளை முயலுங்கள்",
           "link": "https://vijayseelan.github.io/subtraction-borrowing/"
         },
         {
           "id": 2,
-          "name": "Addition Practice",
-          "description": "Improve your addition skills with these fun games.",
-          "link": "https://vijayseelan.github.io/addition-practice/"
+          "name": "எடுத்துச் சென்று சேர்த்தல் - பயிற்சி",
+          "description": "எடுத்துச் சென்று சேர்க்கும் கணக்குகளை முயலுங்கள்.",
+          "link": "https://vijayseelan.github.io/Addition-regroup/"
+        },
+        {
+          "id": 38,
+          "name": "எடுத்துச் சென்று சேர்த்தல் - குறிப்புகள்",
+          "description": "எடுத்துச் சென்று சேர்க்கும் முறையை அறியலாம் வாரீர்.",
+          "link": "https://vijayseelan.github.io/Addition-regroup/"
+        },
+        {
+          "id": 39,
+          "name": "எடுத்துச் சென்று கழித்தல் - குறிப்புகள்",
+          "description": "எடுத்துச் சென்று கழிக்கும் முறையை அறியலாம் வாரீர்.",
+          "link": "https://vijayseelan.github.io/Addition-regroup/"
         }
       ],
       "Science": [
