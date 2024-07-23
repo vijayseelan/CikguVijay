@@ -4,9 +4,9 @@
       "Math": [
         {
           "id": 1,
-          "name": "எடுத்துச் சென்று கழித்தல்",
-          "description": "எடுத்துச் சென்று கழித்தல் கணக்குகளை முயலுங்கள்",
-          "link": "https://vijayseelan.github.io/subtraction-borrowing/"
+          "name": "Addition & Subtraction game",
+          "description": "This is a multilingual (English, Malay & Tamil) additiona and subtraction game",
+          "link": "https://vijayseelan.github.io/Addition-subtraction-multi-lang/"
         },
         {
           "id": 2,
