@@ -35,7 +35,7 @@
         {
           "id": 41,
           "name": "Nilai Tempat & Nilai Digit",
-          "description": "Didik hibur bilai tempat dan nilai digit.",
+          "description": "Didik hibur nilai tempat dan nilai digit.",
           "link": "https://vijayseelan.github.io/Nilai-Tempat-Tahun1/"
         },
         {
@@ -43,6 +43,24 @@
           "name": "Place Value and Digit Value",
           "description": "Learn place value and digit value through this exciting game",
           "link": "https://vijayseelan.github.io/Place-Value-Digit-Value-Year-1/"
+        },
+        {
+          "id": 46,
+          "name": "கிட்டிய பத்து",
+          "description": "கிட்டிய பத்தைக் கற்போம்",
+          "link": "https://vijayseelan.github.io/Nearest-Ten-Year-1-Tamil/"
+        },
+        {
+          "id": 47,
+          "name": "Puluh terdekat",
+          "description": "Mari mengenali puluh terdekat",
+          "link": "https://vijayseelan.github.io/Nearest-Ten-Year-1-Malay/"
+        },
+        {
+          "id": 47,
+          "name": "Nearest Ten",
+          "description": "Let's explore nearest ten",
+          "link": "https://vijayseelan.github.io/Nearest-Ten-Year-1-English/"
         }
       ],
       "Science": [
