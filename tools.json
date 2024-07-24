@@ -158,9 +158,21 @@
       "Math": [
         {
           "id": 14,
-          "name": "Division Basics",
-          "description": "Understand the basics of division.",
-          "link": "https://vijayseelan.github.io/division-basics/"
+          "name": "இடமதிப்பு இலக்கமதிப்பு",
+          "description": "மூன்றாம் ஆண்டுக்கான இடமதிப்பு மற்றும் இலக்கமதிப்பை அறிவோம்",
+          "link": "https://vijayseelan.github.io/Place-Value-Year-3-Tamil/"
+        },
+        {
+          "id": 45,
+          "name": "Nilai Tempat & Nilai Digit",
+          "description": "Didik hibur nilai tempat dan nilai digit",
+          "link": "https://vijayseelan.github.io/Place-Value-Year-3-Malay/"
+        },
+        {
+          "id": 46,
+          "name": "Place Value & Digit Value",
+          "description": "Learn place value adn digit value through this game",
+          "link": "https://vijayseelan.github.io/Place-Value-Year-3-English/"
         }
       ],
       "Science": [
