@@ -57,10 +57,28 @@
           "link": "https://vijayseelan.github.io/Nearest-Ten-Year-1-Malay/"
         },
         {
-          "id": 47,
+          "id": 48,
           "name": "Nearest Ten",
           "description": "Let's explore nearest ten",
           "link": "https://vijayseelan.github.io/Nearest-Ten-Year-1-English/"
+        },
+        {
+          "id": 49,
+          "name": "பணம் (சேர்த்தல் & கழித்தல்)",
+          "description": "பணத்தைச் சேர்ப்போம் மற்றும் கழிப்போம்",
+          "link": "https://vijayseelan.github.io/Money-Add-Minus-Year-1-Tamil/"
+        },
+        {
+          "id": 50,
+          "name": "Wang (Tambah & Tolak)",
+          "description": "Permainan Wang (Tambah & Tolak)",
+          "link": "https://vijayseelan.github.io/Money-Add-Minus-Year-1-Malay/"
+        },
+        {
+          "id": 51,
+          "name": "Money (Addition & Subtraction)",
+          "description": "Add or subtract money related problems",
+          "link": "https://vijayseelan.github.io/Money-Add-Minus-Year-1-English/"
         }
       ],
       "Science": [
