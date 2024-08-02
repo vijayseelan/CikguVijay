@@ -9,71 +9,118 @@
     <meta name="author" content="Your Name">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.3.0/alpine.js" integrity="sha512-nIwdJlD5/vHj23CbO2iHCXtsqzdTTx3e3uAmpTm4x2Y8xCIFyWu4cSIV8GaGe2UNVq86/1h9EgUZy7tn243qdA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f0f0f0;
+        }
+        .neumorphic {
+            background: #f0f0f0;
+            box-shadow: 8px 8px 16px #cccccc, -8px -8px 16px #ffffff;
+            border-radius: 20px;
+        }
+        .neumorphic-inset {
+            background: #f0f0f0;
+            box-shadow: inset 4px 4px 8px #cccccc, inset -4px -4px 8px #ffffff;
+            border-radius: 20px;
+        }
+        .neumorphic-button {
+            transition: all 0.2s ease-in-out;
+        }
+        .neumorphic-button:hover {
+            box-shadow: 4px 4px 8px #cccccc, -4px -4px 8px #ffffff;
+        }
+        .neumorphic-button:active {
+            box-shadow: inset 2px 2px 4px #cccccc, inset -2px -2px 4px #ffffff;
+        }
+        .title-container {
+            padding: 10px 0;
+            line-height: 1.4;
+        }
+        .main-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            background-image: linear-gradient(to right, #ec4899, #8b5cf6);
+            display: inline-block;
+            padding: 5px 0;
+        }
         @keyframes float {
             0% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
+            50% { transform: translateY(-5px); }
             100% { transform: translateY(0px); }
         }
         .float { animation: float 3s ease-in-out infinite; }
     </style>
 </head>
-<body class="bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 min-h-screen flex flex-col" x-data="appData()">
-    <header class="bg-gradient-to-r from-yellow-300 via-yellow-400 to-yellow-500 text-purple-800 p-6 rounded-b-3xl shadow-lg">
-        <h1 class="text-4xl font-bold text-center">CikguVijay.com - bite sized educational tools</h1>
+<body class="min-h-screen flex flex-col bg-gradient-to-br from-blue-100 via-purple-100 to-pink-100" x-data="appData()">
+    <header class="neumorphic p-4 m-4">
+        <div class="flex flex-col items-center">
+            <div class="title-container">
+                <h1 class="main-title">CikguVijay.com</h1>
+            </div>
+            <div class="w-1/2 h-px bg-gradient-to-r from-pink-500 to-violet-500 rounded-full my-3"></div>
+            <p class="text-lg text-center text-gray-600">Bite-Sized Educational Tools</p>
+        </div>
     </header>
 
     <main class="container mx-auto p-4 flex-grow" x-show="!showTools">
         <section class="mb-8 text-center">
-            <h2 class="text-3xl font-bold mb-4 text-white">Pick Your Grade!</h2>
-            <div class="flex flex-wrap justify-center gap-4 mb-4">
+            <h2 class="text-3xl font-bold mb-6 text-indigo-600">Pick Your Grade!</h2>
+            <div class="flex flex-wrap justify-center gap-3 mb-6">
                 <template x-for="grade in grades" :key="grade">
                     <button 
                         @click="selectGrade(grade)"
-                        :class="{'bg-yellow-300 text-purple-800': activeGrade === grade, 'bg-blue-300 text-blue-800': activeGrade !== grade}"
-                        class="px-6 py-3 rounded-full text-xl font-bold transform transition hover:scale-110"
+                        :class="{'bg-gradient-to-r from-yellow-400 to-orange-500 text-white': activeGrade === grade, 'bg-white text-gray-800': activeGrade !== grade}"
+                        class="neumorphic-button px-6 py-2 rounded-full text-lg font-bold transform transition hover:scale-105 focus:outline-none"
                         x-text="'Grade ' + grade"
                         aria-label="'Select Grade ' + grade"
                     ></button>
                 </template>
             </div>
-            <p class="text-2xl text-white">You're in Grade <span x-text="activeGrade" class="font-bold text-yellow-300"></span>!</p>
+            <p class="text-xl text-indigo-600">You're in Grade <span x-text="activeGrade" class="font-bold text-pink-500"></span>!</p>
         </section>
 
-        <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             <template x-for="subject in subjects" :key="subject">
                 <div 
                     @click="toggleSubject(subject)"
-                    :class="{'transform scale-105': activeSubject === subject}"
-                    class="bg-white p-6 rounded-2xl shadow-lg cursor-pointer transition-all duration-300 hover:shadow-xl float"
+                    :class="{'transform scale-105 ring-2 ring-yellow-300': activeSubject === subject}"
+                    class="neumorphic p-6 cursor-pointer transition-all duration-300 hover:shadow-lg float"
                     aria-label="'Select Subject ' + subject"
                 >
-                    <h3 class="text-2xl font-bold mb-2 text-purple-600" x-text="subject"></h3>
+                    <h3 class="text-2xl font-bold mb-3 text-indigo-600" x-text="subject"></h3>
                     <p class="text-gray-600 mb-4" x-text="getSubjectDescription(subject)"></p>
-                    <button class="bg-blue-400 text-white px-4 py-2 rounded-full hover:bg-blue-500 transition mt-2" @click="showTools = true">Explore More Tools</button>
+                    <button class="neumorphic-button bg-gradient-to-r from-blue-500 to-indigo-500 text-white px-4 py-2 rounded-full text-sm transition mt-2 focus:outline-none" @click="showTools = true">Explore Tools</button>
                 </div>
             </template>
         </section>
     </main>
 
     <main class="container mx-auto p-4 flex-grow" x-show="showTools">
-        <button class="bg-red-400 text-white px-4 py-2 rounded-full hover:bg-red-500 transition mb-4" @click="showTools = false">Back</button>
-        <section class="mb-8 text-center">
-            <h2 class="text-3xl font-bold mb-4 text-white">All Available Tools</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <template x-for="tool in tools" :key="tool.id">
-                    <div class="bg-white p-6 rounded-2xl shadow-lg cursor-pointer transition-all duration-300 hover:shadow-xl float">
-                        <h3 class="text-2xl font-bold mb-2 text-purple-600" x-text="tool.name"></h3>
+        <button class="neumorphic-button bg-gradient-to-r from-red-500 to-pink-500 text-white px-4 py-2 rounded-full text-sm transition mb-6 focus:outline-none" @click="showTools = false">Back</button>
+        <section class="mb-6 text-center">
+            <h2 class="text-3xl font-bold mb-6 text-indigo-600">All Available Tools</h2>
+            <div class="mb-4 flex justify-center">
+                <input type="text" placeholder="Search tools..." class="neumorphic-inset w-full max-w-md p-3 text-gray-900" x-model="searchQuery">
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <template x-for="tool in filteredTools" :key="tool.id">
+                    <div class="neumorphic p-6 transition-all duration-300 hover:shadow-lg float">
+                        <h3 class="text-2xl font-bold mb-3 text-indigo-600" x-text="tool.name"></h3>
                         <p class="text-gray-600 mb-4" x-text="tool.description"></p>
-                        <a :href="tool.link" class="bg-green-400 text-white px-4 py-2 rounded-full hover:bg-green-500 transition" target="_blank" rel="noopener noreferrer">Explore</a>
+                        <a :href="tool.link" class="neumorphic-button inline-block bg-gradient-to-r from-green-400 to-blue-500 text-white px-4 py-2 rounded-full text-sm transition focus:outline-none" target="_blank" rel="noopener noreferrer">Explore</a>
                     </div>
                 </template>
             </div>
         </section>
     </main>
 
-    <footer class="bg-gradient-to-r from-purple-600 via-pink-600 to-red-600 text-white p-4 mt-auto rounded-t-3xl text-center">
-        <p>&copy; 2024 Fun Learning Adventure. Made with ❤️ for curious minds!</p>
+    <footer class="neumorphic p-4 mt-auto m-4 text-center">
+        <p class="text-gray-600">&copy; 2024 Fun Learning Adventure. Made with ❤️ for curious minds!</p>
     </footer>
 
     <script>
@@ -82,9 +129,16 @@
                 activeGrade: 1,
                 activeSubject: null,
                 showTools: false,
+                searchQuery: '',
                 grades: [1, 2, 3, 4, 5, 6],
                 subjects: ['Math', 'Science', 'English', 'Malay', 'Tamil', 'Others'],
                 tools: [],
+                get filteredTools() {
+                    return this.tools.filter(tool => 
+                        tool.name.toLowerCase().includes(this.searchQuery.toLowerCase()) || 
+                        tool.description.toLowerCase().includes(this.searchQuery.toLowerCase())
+                    );
+                },
                 async fetchTools() {
                     try {
                         const response = await fetch('tools.json');
@@ -110,7 +164,7 @@
                         'English': 'Become an English master and word genius!',
                         'Malay': 'Jadilah adiwira Melayu!',
                         'Tamil': 'நற்றமிழ் கற்போம்!',
-                        'Others': 'Create artistic world!'
+                        'Others': 'Create an artistic world!'
                     };
                     return descriptions[subject] || 'Discover amazing things!';
                 }
